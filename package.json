@@ -1,0 +1,65 @@
+{
+  "name": "@erikmichelson/open-location-code-ts",
+  "version": "1.20250411.0",
+  "description": "A modern TypeScript port of the Open Location Code JavaScript library for encoding and decoding Open Location Codes.",
+  "type": "module",
+  "main": "dist/open-location-code.esm.js",
+  "maintainers": [
+    {
+      "name": "Erik Michelson",
+      "email": "opensource@erik.michelson.eu",
+      "url": "https://erik.michelson.eu/"
+    }
+  ],
+  "contributors": [
+    "The Open Location Code Library Authors"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ErikMichelson/open-location-code-ts.git"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/open-location-code.esm.js",
+      "browser": "./dist/open-location-code.browser.js"
+    }
+  },
+  "license": "Apache-2.0",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "keywords": [
+    "location",
+    "codes",
+    "open location code",
+    "plus codes",
+    "position",
+    "geo",
+    "decoder",
+    "encoder",
+    "validator"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "types": "tsc --emitDeclarationOnly --outDir dist",
+    "build:esm": "esbuild src/index.ts --bundle --platform=neutral --format=esm --outfile=dist/open-location-code.esm.js --minify --sourcemap",
+    "build:browser": "esbuild src/index.ts --bundle --platform=browser --format=iife --global-name=OpenLocationCode --outfile=dist/open-location-code.browser.js --minify --sourcemap",
+    "build:docs": "typedoc",
+    "build": "npm run clean && npm run types && npm run build:esm && npm run build:browser && npm run build:docs",
+    "test": "tsx --test test/*.test.ts",
+    "check": "biome check",
+    "fix": "biome check --write",
+    "prepublishOnly": "npm run check && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
+    "@fast-csv/parse": "^5.0.5",
+    "@types/node": "^24.6.2",
+    "esbuild": "^0.25.10",
+    "tsx": "^4.20.6",
+    "typedoc": "^0.28.13",
+    "typescript": "^5.9.3"
+  }
+}

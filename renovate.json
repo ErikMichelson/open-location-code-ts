@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "config:js-lib",
+    ":assignee(ErikMichelson)"
+  ],
+  "labels": [
+    "dependencies"
+  ]
+}
