@@ -35,7 +35,7 @@ const location = decode(code);
 
 - The library is fully documented using TypeDoc annotations and JSDoc comments.
 - The documentation is generated from the source code and is available online at <https://erikmichelson.github.io/open-location-code-ts/>.
-- The local documentation can be generated using `npm run build:docs`.
+- The local documentation can be generated using `npm run docs`.
 - After generating the local documentation, it is available in the `docs/` directory.
 
 ---
