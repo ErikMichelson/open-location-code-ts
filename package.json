@@ -66,11 +66,11 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "onFail": "error"
+      "onFail": "warn"
     },
     "packageManager": {
       "name": "npm",
-      "onFail": "error",
+      "onFail": "warn",
       "version": "^11.6.0"
     }
   }
