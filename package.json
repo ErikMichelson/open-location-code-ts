@@ -30,6 +30,7 @@
     "dist",
     "LICENSE"
   ],
+  "homepage": "https://erikmichelson.github.io/open-location-code-ts/",
   "keywords": [
     "location",
     "codes",
@@ -46,8 +47,8 @@
     "types": "tsc --emitDeclarationOnly --outDir dist",
     "build:esm": "esbuild src/index.ts --bundle --platform=neutral --format=esm --outfile=dist/open-location-code.esm.js --minify --sourcemap",
     "build:browser": "esbuild src/index.ts --bundle --platform=browser --format=iife --global-name=OpenLocationCode --outfile=dist/open-location-code.browser.js --minify --sourcemap",
-    "build:docs": "typedoc",
-    "build": "npm run clean && npm run types && npm run build:esm && npm run build:browser && npm run build:docs",
+    "docs": "typedoc",
+    "build": "npm run clean && npm run types && npm run build:esm && npm run build:browser",
     "test": "tsx --test test/*.test.ts",
     "check": "biome check",
     "fix": "biome check --write",
@@ -61,5 +62,16 @@
     "tsx": "^4.20.6",
     "typedoc": "^0.28.13",
     "typescript": "^5.9.3"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "onFail": "error"
+    },
+    "packageManager": {
+      "name": "npm",
+      "onFail": "error",
+      "version": "^11.6.0"
+    }
   }
 }
